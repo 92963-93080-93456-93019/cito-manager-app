@@ -1,22 +1,18 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Layout from '../../components/Layout';
-import CartProducts from "../cart/CartProducts";
-import {Link} from "react-router-dom";
-import {formatNumber} from "../../helpers/utils";
 import CartItem from "../cart/CartItem";
-import {CartContext} from "../../contexts/CartContext";
+import {ENGINE_CLIENT_ENDPOINT} from "../../environment";
 
 const Orders = () => {
-    
+
     var obj;
     var orderItems;
 
-    fetch("http://localhost:8081/clientApi/1/orders?appid=1")
+    fetch(ENGINE_CLIENT_ENDPOINT + "1/orders?appid=1")
         .then(res => res.json())
         .then(data => obj = data)
         .then(() => console.log(obj))
 
-    console.log(orderItems);
     return (
         <Layout title="About" description="This is the Orders page">
             <div className="text-center mt-5">
