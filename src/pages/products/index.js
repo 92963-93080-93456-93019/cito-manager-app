@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { ENGINE_MANAGER_ENDPOINT } from '../../environment';
-import AddProductComponent from './AddProductComponent';
+import ProductsGrid from './ProductsGrid';
 
 export default class Products extends React.Component {
     
@@ -36,10 +36,10 @@ export default class Products extends React.Component {
         return (
             <Layout title="Dashboard" description="This is the Dashboard page">
                 <div className="text-center mt-5">
-                    <h1>{this.state.app.name} | Add Product</h1>
+                    <h1>{this.state.app.name} | Products</h1>
                     <div className="row no-gutters justify-content-center">
                         <div className="col p-3">
-                            <AddProductComponent/>
+                            <ProductsGrid/>
                         </div>
                     </div>
                 </div>

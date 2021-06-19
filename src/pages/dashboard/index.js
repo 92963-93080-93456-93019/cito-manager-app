@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import DashboardGrid from './DashboardGrid';
+import { ENGINE_MANAGER_ENDPOINT } from '../../environment';
 
 export default class Dashboard extends React.Component {
 
@@ -19,7 +20,7 @@ export default class Dashboard extends React.Component {
     
 
     componentDidMount() {
-    fetch("http://localhost:8081/managerApi/1/info")
+    fetch(ENGINE_MANAGER_ENDPOINT+"1/info")
         .then((response) => response.json())
         .then((json) => {
             this.setState({ 
