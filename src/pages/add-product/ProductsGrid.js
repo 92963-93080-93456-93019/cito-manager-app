@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProductItem from './ProductItem';
 import styles from './ProductsGrid.module.scss';
+import configData from "../../config.json";
 import {CLIENT_ENDPOINT} from "../../environment";
 
 export default class ProductsGrid extends React.Component {
+
+
     constructor() {
         super();
         this.state = { products: [], filtered_products: [], query: "" };
@@ -59,7 +62,7 @@ export default class ProductsGrid extends React.Component {
 
                     {
                         this.state.filtered_products.map(product => (
-                            <ProductItem product={product} />
+                            <ProductItem key={product.id} product={product} />
                         ))
                     }
 

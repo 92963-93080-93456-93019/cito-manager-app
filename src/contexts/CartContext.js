@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import { CartReducer, sumItems } from "./CartReducer";
 import configData from "../config.json";
+import {ENGINE_CLIENT_ENDPOINT} from "../environment";
 
 export const CartContext = createContext();
 
@@ -36,6 +37,10 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: "CLEAR" });
   };
 
+  const deleteProduct = () => {
+
+  };
+
   const handleCheckout = () => {
     //console.log("CHECKOUT", state);
 
@@ -62,7 +67,7 @@ const CartContextProvider = ({ children }) => {
         body: JSON.stringify(payload)
     };
 
-    const url_post_order = configData.ENGINE_ENDPOINT + payload.info.userId + '/order/register?appid=' + payload.info.appid;
+    const url_post_order = ENGINE_CLIENT_ENDPOINT + payload.info.userId + '/order/register?appid=' + payload.info.appid;
 
     fetch(url_post_order, requestOptions)
         .then(response => response.json())
@@ -84,6 +89,7 @@ const CartContextProvider = ({ children }) => {
     decrease,
     clearCart,
     handleCheckout,
+    deleteProduct,
     ...state,
   };
 
