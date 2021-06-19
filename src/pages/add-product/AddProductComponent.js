@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './ProductsGrid.module.scss';
-import {CLIENT_HOST, ENGINE_CLIENT_ENDPOINT, ENGINE_MANAGER_ENDPOINT} from "../../environment";
+import styles from './AddProductComponent.module.scss';
+import {ENGINE_MANAGER_ENDPOINT} from "../../environment";
 import {formatNumber} from "../../helpers/utils";
 
 export default class AddProductComponent extends React.Component {

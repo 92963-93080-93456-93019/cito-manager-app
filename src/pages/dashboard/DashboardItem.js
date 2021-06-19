@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../contexts/CartContext";
+import React from "react";
 import { formatNumber } from "../../helpers/utils";
 
 export default class DashboardItem extends React.Component {
