@@ -34,7 +34,7 @@ export default class Dashboard extends React.Component {
 
     render() {
         return (
-            <Layout title="Dashboard" description="This is the Dashboard page">
+            <Layout title="Manager App" description="This is the Dashboard page">
                 <div className="text-center mt-5">
                     <h1>{this.state.app.name} | Dashboard</h1>
                     <div className="row no-gutters justify-content-center">
